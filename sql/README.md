@@ -13,3 +13,9 @@ This folder contains SQL queries used for data validation, cleaning, analysis, K
 - KPI queries
 
 SQL was developed and tested using PostgreSQL.
+-- Validate that orders have valid customer IDs
+SELECT
+  o.order_id,
+  o.customer_id
+FROM orders o
+WHERE o.customer_id IS NULL;
